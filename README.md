@@ -1,16 +1,20 @@
-# Index Asset Library
+# Funke Asset Library
 
-This repository is the source-of-truth manifest for the Index engine's
-in-launcher Asset Library. Anyone running Index sees the entries listed
-here when they open the **Asset Library** tab.
+This repository is the catalog for the Funke engine's in-launcher Asset
+Library. It holds the **metadata** for every entry; the actual project
+archives live on whatever GitHub repo the project author chose to host
+them on. Anyone running Funke sees these entries when they open the
+**Asset Library** tab in the launcher.
 
 ## Repo layout
 
 - `index.json` — the manifest the launcher fetches. Schema documented below.
 - `CONTRIBUTING.md` — submission flow for adding a project.
-- GitHub Releases — each downloadable project lives as a release asset
-  (one zip per release). The release tag follows `<entry-id>-<version>`,
-  e.g. `pong-1.0.0`.
+- `scripts/PublishProject.py` — helper that packs a project, computes the
+  SHA-256, and emits a ready-to-paste entry.
+- No release assets live here (typically). Authors host their archives
+  on their own GitHub repos as Releases; `index.json` entries point at
+  those release-asset URLs.
 
 ## `index.json` schema (v1)
 
@@ -34,7 +38,9 @@ here when they open the **Asset Library** tab.
         "https://...screenshot-1.png"
       ],
       "archive": {
-        "url": "https://github.com/Ben-Scr/Index-AssetLibrary/releases/download/pong-1.0.0/pong.zip",
+        // Typical: the project's own repo. Could also point at this
+        // repo's releases for authors without a dedicated project repo.
+        "url": "https://github.com/your-handle/your-project/releases/download/v1.0.0/your-project-1.0.0.zip",
         "sha256": "<lowercase hex>",      // hard-pinned; verified on download
         "sizeBytes": 524288,
         "rootInZip": ""                   // empty = files at root, or "pong/" if wrapped
@@ -43,7 +49,7 @@ here when they open the **Asset Library** tab.
         "minVersion": "2026.1.0",         // inclusive
         "maxVersion": null                // optional
       },
-      "requiredPackages": [],             // matches index-project.json `packages`
+      "requiredPackages": [],             // matches project.json `packages`
       "homepage": "https://...",          // optional
       "sourceUrl": "https://..."          // optional, link to source
     }
@@ -51,12 +57,19 @@ here when they open the **Asset Library** tab.
 }
 ```
 
+### `archive.url` can point anywhere on GitHub
+
+The launcher accepts any URL on `github.com`, `objects.githubusercontent.com`,
+`raw.githubusercontent.com`, or `codeload.github.com` — including release
+assets on a contributor's own repo, not just this one. See
+`CONTRIBUTING.md` for the recommended "host on your own project repo" flow.
+
 ### Schema versioning
 
 - Adding optional fields is **not** a schema bump.
 - Removing or repurposing a field **is** a bump.
 - Older launchers seeing a higher `schemaVersion` refuse to render the
-  list (showing "update Index to view this library") rather than crash.
+  list (showing "update Funke to view this library") rather than crash.
 
 ### Trust model
 
