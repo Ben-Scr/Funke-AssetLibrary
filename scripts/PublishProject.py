@@ -86,6 +86,16 @@ def detect_git_remote_owner_repo() -> tuple[str | None, str | None]:
 # Matched against any path segment (file or directory name).
 EXCLUDE_DIR_NAMES = {
     "bin", "obj", ".vs", ".vscode", "__pycache__", ".idea",
+    ".git",            # the project's own history
+    ".funke",          # per-machine editor cache (asset registry, thumbnail, package build)
+}
+# Project-relative paths the engine regenerates on load or that hold build output.
+EXCLUDE_REL_PATHS = {
+    "Builds",
+    "Packages/Funke-ScriptCore",
+    "Packages/Index-ScriptCore",
+    "Packages/FunkeDefines.props",
+    "Packages/FunkePackages.props",
 }
 # File-name globs.
 EXCLUDE_FILE_GLOBS = (
@@ -98,6 +108,10 @@ EXCLUDE_FILE_GLOBS = (
 
 def is_excluded_dir(name: str) -> bool:
     return name in EXCLUDE_DIR_NAMES
+
+
+def is_excluded_rel_path(rel: str) -> bool:
+    return rel in EXCLUDE_REL_PATHS
 
 
 def is_excluded_file(name: str) -> bool:
@@ -129,9 +143,12 @@ def build_zip(project_dir: Path, out_zip: Path) -> None:
     with zipfile.ZipFile(out_zip, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for current, dirs, files in os.walk(project_dir):
             # Prune excluded dirs in-place so os.walk doesn't recurse into them.
-            dirs[:] = [d for d in dirs if not is_excluded_dir(d)]
+            current_rel = Path(current).relative_to(project_dir).as_posix()
+            prefix = "" if current_rel == "." else current_rel + "/"
+            dirs[:] = [d for d in dirs
+                       if not is_excluded_dir(d) and not is_excluded_rel_path(prefix + d)]
             for fname in files:
-                if is_excluded_file(fname):
+                if is_excluded_file(fname) or is_excluded_rel_path(prefix + fname):
                     continue
                 abspath = Path(current) / fname
                 rel = abspath.relative_to(project_dir).as_posix()
