@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T20:36:44Z",
+  "generatedAt": "2026-10-29T18:33:03Z",
   "entries": [
     {
       "id": "neon-stack",
@@ -64,6 +64,38 @@
         "url": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/voxtau-1.0.0/voxtau-1.0.0.zip",
         "sha256": "fea3de71ccc10b66e28c74e3337192ff21b2af2fb15aa48a07e7e072a837d171",
         "sizeBytes": 23228039,
+        "rootInZip": ""
+      },
+      "engine": {
+        "minVersion": "2026.1.0-beta.1"
+      },
+      "requiredPackages": []
+    },
+    {
+      "id": "funkebench",
+      "name": "FunkeBench",
+      "author": "@Ben-Scr",
+      "shortDescription": "Interactive ECS and rendering benchmarks: Create, Destroy, Move, 2D sprites and 3D cubes, with jobs and CSV export.",
+      "description": "An editable benchmarking tool built entirely with Funke. Compare entity creation, destruction and movement, or measure real frame intervals while rendering 2D sprites and 3D cubes.\n\nChoose entity counts, serial or jobs workloads, animation, VSync, warmup and sample duration. Results include mean, median, P95, setup, command recording and playback times, plus CSV export with machine and engine metadata. Rendering measurements include the engine, UI and presentation; they are not isolated GPU timings.\n\nDownload through the Funke Launcher, open the project and press Play in the Bench scene. Requires Funke 2026.1.0-beta.1, the Funke.2D and Funke.3D modules, and the .NET 10 SDK. No additional packages. Includes source code, scene generator, documentation and verification scripts. MIT licensed; bundled fonts retain their own licenses.",
+      "tags": [
+        "benchmark",
+        "ecs",
+        "2d",
+        "3d",
+        "tool"
+      ],
+      "category": "Sample",
+      "version": "1.0.0",
+      "license": "MIT",
+      "thumbnail": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/funkebench-1.0.0/thumb.png",
+      "screenshots": [
+        "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/funkebench-1.0.0/screenshot-1.png",
+        "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/funkebench-1.0.0/screenshot-2.png"
+      ],
+      "archive": {
+        "url": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/funkebench-1.0.0/funkebench-1.0.0.zip",
+        "sha256": "4317cb3c21add954a91df66d1d58c50525cb6020dcb4d993f3da61962d9e8b17",
+        "sizeBytes": 6202969,
         "rootInZip": ""
       },
       "engine": {
