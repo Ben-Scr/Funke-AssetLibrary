@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-29T18:33:03Z",
+  "generatedAt": "2026-11-01T20:33:46Z",
   "entries": [
     {
       "id": "neon-stack",
@@ -96,6 +96,37 @@
         "url": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/funkebench-1.0.0/funkebench-1.0.0.zip",
         "sha256": "4317cb3c21add954a91df66d1d58c50525cb6020dcb4d993f3da61962d9e8b17",
         "sizeBytes": 6202969,
+        "rootInZip": ""
+      },
+      "engine": {
+        "minVersion": "2026.1.0-beta.1"
+      },
+      "requiredPackages": []
+    },
+    {
+      "id": "aetherwild",
+      "name": "Aetherwild",
+      "author": "@Ben-Scr",
+      "shortDescription": "Fantasy voxel survival sandbox with world exploration, building, crafting and creatures.",
+      "description": "Aetherwild is a work-in-progress fantasy voxel survival game made with Funke. This editable project includes the game source, scenes, models, textures, audio and build profiles. Explore the world, gather resources, craft equipment and build. Import through the Funke Launcher, open the MainMenu scene and press Play. Requires Funke 2026.1.0-beta.1 with the Funke.3D module and the .NET 10 SDK. No additional packages. No project-wide reuse license has been declared; bundled third-party notices remain applicable.",
+      "tags": [
+        "3d",
+        "voxel",
+        "sandbox",
+        "fantasy",
+        "survival"
+      ],
+      "category": "Demo",
+      "version": "1.0.0",
+      "license": "NOASSERTION",
+      "thumbnail": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.0/thumb.png",
+      "screenshots": [
+        "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.0/screenshot-1.png"
+      ],
+      "archive": {
+        "url": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.0/aetherwild-1.0.0.zip",
+        "sha256": "8f061a62196fb86ce6a267f22742f9fabe8637f67228927aa4c4f65a21278e5a",
+        "sizeBytes": 288046582,
         "rootInZip": ""
       },
       "engine": {
