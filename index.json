@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T20:33:46Z",
+  "generatedAt": "2026-11-02T22:14:21Z",
   "entries": [
     {
       "id": "neon-stack",
@@ -117,16 +117,17 @@
         "survival"
       ],
       "category": "Demo",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "license": "NOASSERTION",
-      "thumbnail": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.0/thumb.png",
+      "thumbnail": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.1/thumb.png",
       "screenshots": [
-        "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.0/screenshot-1.png"
+        "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.1/screenshot-1.png",
+        "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.1/screenshot-2.png"
       ],
       "archive": {
-        "url": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.0/aetherwild-1.0.0.zip",
-        "sha256": "8f061a62196fb86ce6a267f22742f9fabe8637f67228927aa4c4f65a21278e5a",
-        "sizeBytes": 288046582,
+        "url": "https://github.com/Ben-Scr/Funke-AssetLibrary/releases/download/aetherwild-1.0.1/aetherwild-1.0.1.zip",
+        "sha256": "89580300c5ba0ad73a670ca4a82aa82841367aa1b658b4d6cffbf0fd398e5d45",
+        "sizeBytes": 202715472,
         "rootInZip": ""
       },
       "engine": {
